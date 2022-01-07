@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">KUZ-EX</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="">Anasayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/sinavliste">Sınavlar</a>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/sinavekle">Sınav Ekle</a>
+            
+            <li class="nav-item dropdown">
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Cevap Anahtarları
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/turkcecevap"target="_blank">Türkçe Cevap Anahtarı</a></li>
+                   
+                </ul>
+              </li>
+            </ul>
+            <form class="text-end">
+              <button class="btn btn-danger md-5" type="submit"routerLink="/login" *ngIf="!fbServis.OturumKontrol()">Üye Girişi</button>
+              <button class="btn btn-success md-5" type="submit"routerLink="/kayitlar" *ngIf="fbServis.OturumKontrol()">Admin Paneli</button>
+              <button class="btn btn-warning ml-2" type="submit"routerLink="" (click)="OturumuKapat()"*ngIf="fbServis.OturumKontrol()"
+              >Çıkış Yap</button>
+              
+              
+              <!-- <button class="btn btn-dark md-5" type="submit"routerLink="/kayitol" *ngIf="!servis.OturumKontrol()">Kayıt Ol</button> -->
+               
+              
+          </form>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>

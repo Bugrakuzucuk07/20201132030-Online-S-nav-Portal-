@@ -1,0 +1,42 @@
+<div class="details col-md-6">
+    
+  <p>{{secKayit.baslik}}</p>
+  <p>{{secKayit.icerik}}</p>
+  
+  <div class="card" *ngFor="let kayit2 of kayitlar2">
+      
+      <div class="card-body">
+          <h4>{{kayit2.baslik2}}</h4>
+          <h4>{{kayit2.icerik2}}</h4>
+      </div>
+  </div>
+  
+  <div class="row">
+      <div class="col-md-12">
+          <form action="" #frm2="ngForm" (ngSubmit)="Kaydet2()">
+          <div class="card">
+              <div class="header">
+                  <h4>Yanıt Ekle</h4>
+              </div>
+              <div class="card-body">
+                  <div class="form-group">
+                      <label for="">Soru Numarası</label>
+                      <input type="text" name="baslik" class="form-control" [(ngModel)]="secKayit2.baslik2" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="">Cevap</label>
+                      <textarea name="icerik" class="form-control" [(ngModel)]="secKayit2.icerik2" required></textarea>
+                  </div>
+              </div>
+              <div class="card-footer">
+                  <input type="submit" value="Kaydet" class="btn btn-success " [disabled]="frm2.invalid">
+                  
+                  <button class="btn btn-primary ml-3" [routerLink]="['/sinav']" >Sınava Dön</button>
+                  
+              </div>
+              <button><a class="dropdown-item" href="/turkcecevap"target="_blank">Sınavı Bitir</a></button>
+          </div>
+      </form>
+      </div>
+  </div>
+  </div>
